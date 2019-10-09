@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Dont</title>
+	<style>
+    .ab{
+    	background: black;
+    	color: wheat;
+    	font-size: 20px;
+    	text-align: center;
+    	line-height: 400px;
+		margin: 60px auto;
+		position: relative;
+		width: 400px;
+		height: 400px;
+		perspective: 1000px;
+		border:5px solid yellow;
+    }
+		.a{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 200px;
+			height: 400px;
+			background: red;
+			transform-origin:left;
+			transition: 1s linear;
+		 
+		}
+			.b
+			{
+		  position: absolute;
+			right: 0;
+			top: 0;
+			width: 200px;
+			height: 400px;
+			background: red;
+			transform-origin:right;
+			transition: 1s linear ;
+      }
+      .c{
+		  position: absolute;
+			right: 0;
+			top: 0;
+			width: 400px;
+			height: 200px;
+			background: blue;
+			transform-origin:top;
+			transition: 4s linear;
+      }
+      .d{
+	    position: absolute;
+			right: 0;
+			bottom:0;
+			width: 400px;
+			height: 200px;
+			background: blue;
+			transform-origin:bottom;
+			transition: 4s linear;
+      
+      }
+		.ab:hover .a{
+			transform: rotateY(-120deg);
+		}
+		.ab:hover .b{
+			transform: rotateY(120deg);
+		}
+		.ab:hover .c{
+			transform: rotateX(120deg);
+		}
+		.ab:hover .d{
+			transform: rotateX(-120deg);
+		}
+	</style>
+</head>
+<body>
+	<!-- css3变形功能
+	perspective	 -->
+	<div class="ab"> 嘿  傻狗  哈哈哈哈哈
+<div class="a"></div>
+<div class="b"></div>
+<div class="c"></div>
+<div class="d"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3D盒子模型</title>
+	<style>
+	body {
+		margin: 0;
+		padding: 0;
+	}
+		.show {/*旋转舞台*/
+			perspective:1000px;
+			width: 700px;
+			height: 700px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin: -350px;
+			padding: -350px;
+			/*background: rgb(255,255,255,.5);*/
+		}
+		.box {/*盒子容器*/
+			transform-style: preserve-3d;/*设置变形方式为3D变形*/
+			position: absolute;
+			width: 450px;
+			height: 450px;
+			/*background: red;*/
+			top: 50%;
+			left: 50%;
+			margin-left: -225px;
+			margin-top: -225px;
+			animation: rotate 60s linear infinite;
+		}
+		.face {/*盒子每个面的公共设置*/
+			position: absolute;
+			width: 150px;
+			height: 150px;
+			top: 50%;
+			left: 50%;
+			margin-left: -75px;
+			margin-top: -75px;
+			transition: 2s linear ;
+			background: currentColor;/*背景颜色为每个面的color颜色，currentcolor是当前color属性的值*/
+			/*font-size: 72px;
+			text-align: center;
+			line-height: 100px;
+			color: #fff;*/
+		}
+		.side {
+			position: absolute;
+			width: 300px;
+			height: 300px;
+			top: 50%;
+			left: 50%;
+			margin-left: -150px;
+			margin-top: -150px;
+			transition: 2s linear ;
+			background: currentColor;
+
+		}
+		.show:hover .face {
+			box-shadow: 0 0 30px currentColor;
+		}
+		.show:hover .side1 {
+			transform: translateZ(225px);
+		}
+		.show:hover .side2 {
+			transform:  rotateY(.5turn) translateZ(225px);
+		}
+		.show:hover .side3 {
+			transform: rotateY(-.25turn) translateZ(225px);
+		}
+		.show:hover .side4 {
+			transform: rotateY(.25turn) translateZ(225px);
+		}
+		.show:hover .side5 {
+			transform: rotateX(.25turn) translateZ(225px);
+		}
+		.show:hover .side6 {
+			transform: rotateX(-.25turn) translateZ(225px);
+		}
+
+		.face1 {
+			color:pink;
+			transform: translateZ(75px);
+		}
+		.face2 {
+			color:yellow;
+			transform: rotateY(.5turn) translateZ(75px);	
+		}
+		.face3 {
+			color: red;
+			transform: rotateY(-.25turn) translateZ(75px);
+		}
+		.face4 {
+			color:orange;
+			transform: rotateY(.25turn) translateZ(75px);
+		}
+		.face5 {
+			color: green;
+			transform: rotateX(.25turn) translateZ(75px);
+		}
+		.face6 {
+			color: blue;
+			transform: rotateX(-.25turn) translateZ(75px);
+		}
+		.side1 {
+			color: rgba(0,0,0,0.2);
+			transform: translateZ(150px);
+		}
+		.side2 {
+			color: rgba(0,0,0,0.2);
+			transform: rotateY(.5turn) translateZ(150px);
+		}
+		.side3 {
+			color: rgba(0,0,0,0.2);
+			transform: rotateY(-.25turn) translateZ(150px);
+		}
+		.side4 {
+			color: rgba(0,0,0,0.2);
+			transform:  rotateY(.25turn) translateZ(150px);
+		}
+		.side5 {
+			color: rgba(0,0,0,0.2);
+			transform: rotateX(.25turn) translateZ(150px);
+		}
+		.side6 {
+			color: rgba(0,0,0,0.2);
+			transform: rotateX(-.25turn) translateZ(150px);
+		}
+		@keyframes rotate {
+		 			/*设置几个特定的时间点进行怎样的变化*/
+			0% {/*起点，可选项，一般会写上*/
+				transform: rotateY(40deg) rotateX(-40deg) rotateZ(30deg);
+			}
+			100% { /* 终点 必选项*/
+				transform: rotateY(6000deg) rotateX(6000deg) rotateZ(6000deg);
+			}
+		 }
+	</style>
+</head>
+<body>
+	<div class="show">
+		<div class="box">
+			<div class="face face1"></div>
+			<div class="face face2"></div>
+			<div class="face face3"></div>
+			<div class="face face4"></div>
+			<div class="face face5"></div>
+			<div class="face face6"></div>
+			<div class="side side1"></div>
+			<div class="side side2"></div>
+			<div class="side side3"></div>
+			<div class="side side4"></div>
+			<div class="side side5"></div>
+			<div class="side side6"></div>
+		</div>
+	</div>
+</body>
+</html>
